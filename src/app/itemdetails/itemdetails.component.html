@@ -1,0 +1,52 @@
+
+      <mat-card class="itemInfo">
+        <mat-toolbar class="toolbar">
+      <span style="margin: auto;text-align: center;">
+       Create Item Form
+      </span>
+        </mat-toolbar>
+        <div style="text-align: center;">
+
+          <div style="margin-top: 3%;">
+            <input #textbox type="text" placeholder="Item Name" [(ngModel)]="textValue" required>
+            {{textbox.value}}
+          </div>
+          <br/>
+
+          <div>
+            <input type="number" placeholder="Item Price"
+                   [value] = "itemprice" (input) = "itemprice = $event.target.value" required>
+            {{itemprice | currency:'INR':true:'2.2-4'}}
+          </div>
+          <br/>
+
+          <div>
+            <h6>Item Image</h6>
+            <input  type="file" placeholder="Item Image"  required>
+          </div>
+          <br/>
+
+          <div>
+            <input #textbox1 type="text" placeholder="Item Description" [(ngModel)]="textValue1" required>
+            {{textbox1.value}}
+          </div>
+
+          <br/>
+
+          <mat-form-field>
+            <mat-label>Item Addition Date</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+          <div class="submit-btn-panel" fxLayout="row" fxLayoutAlign="space-evenly center center">
+            <button type="submit" mat-flat-button color="primary" fxLayoutAlign="center">Submit</button>
+          </div>
+        </div>
+      </mat-card>
+
+
+
+
+
